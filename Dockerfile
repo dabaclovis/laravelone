@@ -28,6 +28,7 @@ RUN curl -sS https://getcomposer.org/installer | php --  --install-dir=/usr/loca
 
 COPY . /var/www/html/
 RUN composer install
+ENTRYPOINT [ "entry.sh" ]
 
 CMD ["php","artisan","serve","--host=0.0.0.0"]
 
