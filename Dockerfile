@@ -29,8 +29,10 @@ RUN curl -sS https://getcomposer.org/installer | php --  --install-dir=/usr/loca
 COPY . /var/www/html/
 RUN composer install
 ENV PORT=80
-ENTRYPOINT [ "docker/entrypoint.sh" ]
+
 
 CMD ["php","artisan","serve","--host=0.0.0.0","--port=$PORT"]
+
+
 
 # NOTES: this document is for ubuntu 20.04. still to test in ubuntu 22.04
